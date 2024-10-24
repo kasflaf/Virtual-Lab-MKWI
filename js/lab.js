@@ -1,21 +1,32 @@
 // Define your quiz questions as an array of objects
 const questions = [
     {
-        question: "What is the capital of France?",
-        options: ["Berlin", "Madrid", "Paris", "Rome"],
-        correctAnswer: 2 // Index of the correct answer
+        question: "What is the past tense of 'go'?",
+        options: ["goed", "went", "going", "gone"],
+        correctAnswer: 1 // Index of the correct answer
     },
     {
-        question: "What is the largest planet in our solar system?",
-        options: ["Earth", "Mars", "Jupiter", "Venus"],
-        correctAnswer: 2
+        question: "Which of the following is a synonym for 'happy'?",
+        options: ["sad", "joyful", "angry", "tired"],
+        correctAnswer: 1
     },
     {
-        question: "Which element has the chemical symbol 'O'?",
-        options: ["Oxygen", "Gold", "Iron", "Osmium"],
+        question: "What is the plural form of 'child'?",
+        options: ["childs", "children", "childes", "kids"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which word is an antonym of 'difficult'?",
+        options: ["easy", "hard", "complex", "complicated"],
         correctAnswer: 0
+    },
+    {
+        question: "What is the main verb in the sentence: 'She loves to read books'?",
+        options: ["She", "loves", "to", "read"],
+        correctAnswer: 1
     }
 ];
+
 
 let currentQuestionIndex = 0;
 let score = 0;
