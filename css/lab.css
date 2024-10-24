@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box; /* Apply box-sizing globally */
+}
+
+html, body {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Cover the full width of the viewport */
+    height: 100%; /* Cover the full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    background-color: #fbd5a7;
+    margin: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure the main content takes at least the full viewport height */
+}
+
+footer {
+    background-color: rgb(50, 43, 32);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+iframe {
+    width: 70%;
+    height: auto;
+    /* Additional styling if needed */
+}
+
+image {
+    width: 70%;
+    height: auto;
+    /* Additional styling if needed */
+}
+
+.go-next-button {
+    margin-top: 20px; /* Space between the content box and the button */
+    position: relative;
+    transform: translateX(-10%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.go-next-button:hover {
+    background-color: burlywood;
+    color: black;
+}
+
+.desktop-header {
+    display: none;
+}
+
+.phone-header {
+    display: block;
+}
+
+@media (min-width: 600px) {
+    .desktop-header {
+        display: block;
+    }
+    .phone-header {
+        display: none;
+    }
+}
+
+.content-box {
+    width: 90%;
+    height: auto; /* Change this to auto */
+    position: relative;
+    margin: 0 auto; /* Center the box horizontally */
+    background-color: #fff; /* Background color for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    
+    /* Limit the vertical growth */
+    max-height: 60vh; /* Won't grow more than 60% of the viewport height */
+    min-height: 200px; /* Minimum height for smaller screens */
+
+    /* Limit the width */
+    max-width: 1000px; /* Prevent the box from being too wide */
+    min-width: 300px; /* Minimum width for smaller screens */
+}
+
+
+#dragdrop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.drop-zone {
+    width: 100%;
+    min-height: 100px;
+    border: 2px dashed #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.drag-elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.draggable {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.draggable:hover {
+    background-color: burlywood;
+    color: black;
+}
+
+#form-quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-quiz button {
+    margin: 5px 0; /* Add vertical margin between buttons */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Make buttons take up the full width */
+    max-width: 300px; /* Optional: limit the maximum width */
+}
+
+#form-quiz button:hover {
+    background-color: burlywood;
+    color: black;
+}
+
+.form {
+}
+
+.dragdrop {
+    visibility: show;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+/* Style for the quiz option buttons */
+.quiz-option {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.quiz-option:hover {
+    background-color: burlywood;
+}
+
+/* Style for the button container holding Restart and Next buttons */
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Style for the Restart and Go Next buttons */
+.go-next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.go-next-button:hover {
+    background-color: burlywood;
+}

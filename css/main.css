@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box; /* Apply box-sizing globally */
+}
+
+html, body {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Cover the full width of the viewport */
+    height: 100%; /* Cover the full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body{
+    background-color: #eeeeee;
+    margin: 0;
+    width:100%;
+    font-family: Arial, sans-serif;
+}
+
+main{
+    width: 100%;
+}
+
+footer{
+    background-color: rgb(50, 43, 32);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+.intro{
+    text-align: center;
+    background-color: rgb(231, 178, 109);
+    padding-top:40%;
+    padding-bottom: 40%;
+    visibility: block;
+}
+
+.aboutus-content{
+    display: felx;
+    justify-content: center;
+    gap: 20%;
+}
+
+.aboutus{
+    text-align: center;
+    background-color: rgb(159, 124, 77);
+    padding-top: 40%;
+    padding-bottom: 40%;
+    visibility: block;
+}
+
+iframe {
+    width: 70%;
+    height: auto;
+    /* Additional styling if needed */
+}
+
+image {
+    width: 70%;
+    height: auto;
+    /* Additional styling if needed */
+}
+
+button {
+    background-color: rgb(94, 73, 45);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 35%;
+    font-size: 20px;
+    border-radius: 0.5rem;
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Lab</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+    <header>
+        <div class="phone-header">
+            <nav class="TopNav">
+                <a href="../page/main.html">Home</a>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </nav>
+            <nav id="Sidenav" class="SideNav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">Login</a>
+                <a href="#">Sign Up</a>
+                <a href="#">About</a>
+            </nav>
+            <div id="overlay" class="overlay"></div>
+        </div>
+        <div class="desktop-header">
+            <nav class="TopNav">
+                <a href="../page/main.html">Home</a>
+                <div class="TopNavRight">
+                    <a href="#">About</a>
+                    <a href="#">Sign Up</a>
+                    <a href="#">Login</a>
+                </div> 
+            </nav>
+        </div>
+        <script src="../js/sideNav.js"></script>
+    </header>
+    <main>
+        <section class="intro">
+            <h1>EngLab</h1>
+            <h2>Tekan dibawah untuk memulai</h2>
+            <button id="startbtn" onclick="location.href='lab.html'">Start Here</button>
+        </section>
+        <section class="aboutus">
+            <h1>About Us</h1>
+            <div class="aboutus-content">
+                <iframe src="https://www.youtube.com/embed/xvFZjo5PgG0?si=L6tzJsnVbY8zs0J5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>    
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+        </section>
+    </main>
+    <footer>
+        <a href="https://github.com/kasflaf/Virtual-Lab-MKWI" target="_blank">Link to GitHub</a>
+    </footer>
+</body>
+</html>
