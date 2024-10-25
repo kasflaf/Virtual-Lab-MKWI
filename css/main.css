@@ -48,9 +48,8 @@ footer a:hover{
 }
 
 .aboutus-content{
-    display: felx;
-    justify-content: center;
-    gap: 20%;
+    position:relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 = 0.5625 or 56.25%) */
 }
 
 .aboutus{
@@ -58,13 +57,16 @@ footer a:hover{
     background-color: rgb(159, 124, 77);
     padding-top: 40%;
     padding-bottom: 40%;
-    visibility: block;
 }
 
-iframe {
-    width: 70%;
-    height: auto;
-    /* Additional styling if needed */
+iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 image {
