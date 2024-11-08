@@ -1,233 +1,144 @@
-* {
-    box-sizing: border-box; /* Apply box-sizing globally */
-}
-
-html, body {
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
-    width: 100%; /* Cover the full width of the viewport */
-    height: 100%; /* Cover the full height of the viewport */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-body {
-    background-color: #fbd5a7;
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --light-text-color: #ffffff;
+  }
+  
+  * {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
     width: 100%;
-    font-family: Arial, sans-serif;
-}
-
-main {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden;
+  }
+  
+  main {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ensure the main content takes at least the full viewport height */
-}
-
-footer {
-    background-color: rgb(50, 43, 32);
-    color: white;
+    min-height: 100vh;
+    padding-top: 60px;
+  }
+  
+  footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
     text-align: center;
     padding: 20px;
-    bottom: 0;
     width: 100%;
-}
-
-footer a {
-    color: white;
+  }
+  
+  footer a {
+    color: var(--primary-color);
     text-decoration: none;
-}
-
-footer a:hover {
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: var(--accent-color);
     text-decoration: underline;
-}
-
-iframe {
-    width: 70%;
-    height: auto;
-    /* Additional styling if needed */
-}
-
-image {
-    width: 70%;
-    height: auto;
-    /* Additional styling if needed */
-}
-
-.go-next-button {
-    margin-top: 20px; /* Space between the content box and the button */
-    position: relative;
-    transform: translateX(-10%);
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.go-next-button:hover {
-    background-color: burlywood;
-    color: black;
-}
-
-.desktop-header {
-    display: none;
-}
-
-.phone-header {
-    display: block;
-}
-
-@media (min-width: 600px) {
-    .desktop-header {
-        display: block;
-    }
-    .phone-header {
-        display: none;
-    }
-}
-
-.content-box {
+  }
+  
+  .content-box {
     width: 90%;
-    height: auto; /* Change this to auto */
-    position: relative;
-    margin: 0 auto; /* Center the box horizontally */
-    background-color: #fff; /* Background color for the box */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
-    padding: 20px; /* Padding inside the box */
-    border-radius: 10px; /* Rounded corners */
-    
-    /* Limit the vertical growth */
-    max-height: 60vh; /* Won't grow more than 60% of the viewport height */
-    min-height: 200px; /* Minimum height for smaller screens */
-
-    /* Limit the width */
-    max-width: 1000px; /* Prevent the box from being too wide */
-    min-width: 300px; /* Minimum width for smaller screens */
-}
-
-
-#dragdrop-container {
+    max-width: 800px;
+    background-color: var(--light-text-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  #soal {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+  }
+  
+  #form-quiz {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.drop-zone {
+    gap: 1rem;
+  }
+  
+  .quiz-option {
     width: 100%;
-    min-height: 100px;
-    border: 2px dashed #ccc;
-    margin-bottom: 20px;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.drag-elements {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.draggable {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
+    padding: 0.75rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
     border: none;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
-    user-select: none;
-}
-
-.draggable:hover {
-    background-color: burlywood;
-    color: black;
-}
-
-#form-quiz {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#form-quiz button {
-    margin: 5px 0; /* Add vertical margin between buttons */
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    width: 100%; /* Make buttons take up the full width */
-    max-width: 300px; /* Optional: limit the maximum width */
-}
-
-#form-quiz button:hover {
-    background-color: burlywood;
-    color: black;
-}
-
-.form {
-}
-
-.dragdrop {
-    visibility: show;
-}
-
-.button-container {
+    transition: background-color 0.3s ease;
+  }
+  
+  .quiz-option:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .button-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 20px;
-}
-
-/* Style for the quiz option buttons */
-.quiz-option {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #333;
-    color: white;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .go-next-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.quiz-option:hover {
-    background-color: burlywood;
-}
-
-/* Style for the button container holding Restart and Next buttons */
-.button-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-/* Style for the Restart and Go Next buttons */
-.go-next-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.go-next-button:hover {
-    background-color: burlywood;
-}
+    transition: background-color 0.3s ease;
+  }
+  
+  .go-next-button:hover {
+    background-color: #c0392b;
+  }
+  
+  #score-display {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .content-box {
+      padding: 3rem;
+    }
+  
+    #soal {
+      font-size: 2rem;
+    }
+  
+    .quiz-option {
+      font-size: 1.125rem;
+    }
+  
+    .go-next-button {
+      font-size: 1.125rem;
+    }
+  
+    #score-display {
+      font-size: 1.5rem;
+    }
+  }

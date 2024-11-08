@@ -27,7 +27,6 @@ const questions = [
     }
 ];
 
-
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -36,6 +35,7 @@ const questionText = document.getElementById('soal');
 const optionButtons = document.querySelectorAll('.quiz-option');
 const nextButton = document.getElementById('nextbtn');
 const restartButton = document.getElementById('restartbtn');
+const scoreDisplay = document.getElementById('score-display');
 
 // Load a question to the quiz
 function loadQuestion() {
@@ -46,6 +46,7 @@ function loadQuestion() {
         button.disabled = false;
         button.style.backgroundColor = ""; // Reset background color
     });
+    updateScoreDisplay();
 }
 
 // Check the selected answer
@@ -53,12 +54,13 @@ function selectAnswer(optionIndex) {
     const currentQuestion = questions[currentQuestionIndex];
     if (optionIndex === currentQuestion.correctAnswer) {
         score++;
-        optionButtons[optionIndex].style.backgroundColor = "green"; // Highlight correct answer
+        optionButtons[optionIndex].style.backgroundColor = "#2ecc71"; // Green for correct
     } else {
-        optionButtons[optionIndex].style.backgroundColor = "red"; // Highlight incorrect answer
-        optionButtons[currentQuestion.correctAnswer].style.backgroundColor = "green"; // Show correct answer
+        optionButtons[optionIndex].style.backgroundColor = "#e74c3c"; // Red for incorrect
+        optionButtons[currentQuestion.correctAnswer].style.backgroundColor = "#2ecc71"; // Show correct answer
     }
     optionButtons.forEach(button => button.disabled = true); // Disable buttons after selection
+    updateScoreDisplay();
 }
 
 // Move to the next question
@@ -67,8 +69,10 @@ function nextQuestion() {
     if (currentQuestionIndex < questions.length) {
         loadQuestion();
     } else {
-        questionText.textContent = `Quiz finished! Your score: ${score} / ${questions.length}`;
+        questionText.textContent = "Quiz finished!";
+        optionButtons.forEach(button => button.style.display = 'none');
         nextButton.disabled = true;
+        updateScoreDisplay();
     }
 }
 
@@ -77,7 +81,13 @@ function restartQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.disabled = false;
+    optionButtons.forEach(button => button.style.display = '');
     loadQuestion();
+}
+
+// Update the score display
+function updateScoreDisplay() {
+    scoreDisplay.textContent = `Score: ${score} / ${questions.length}`;
 }
 
 // Event listeners for buttons

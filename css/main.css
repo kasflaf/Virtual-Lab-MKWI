@@ -1,91 +1,172 @@
-* {
-    box-sizing: border-box; /* Apply box-sizing globally */
-}
-
-html, body {
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
-    width: 100%; /* Cover the full width of the viewport */
-    height: 100%; /* Cover the full height of the viewport */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-body{
-    background-color: #eeeeee;
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --light-text-color: #ffffff;
+  }
+  
+  * {
+    box-sizing: border-box;
     margin: 0;
-    width:100%;
-    font-family: Arial, sans-serif;
-}
-
-main{
+    padding: 0;
+  }
+  
+  html, body {
     width: 100%;
-}
-
-footer{
-    background-color: rgb(50, 43, 32);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    bottom: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  main {
     width: 100%;
-}
-
-footer a{
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover{
-    text-decoration: underline;
-}
-
-.intro{
+    padding-top: 60px; /* Adjust based on your header height */
+  }
+  
+  h1, h2, h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .intro {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
     text-align: center;
-    background-color: rgb(231, 178, 109);
-    padding-top:40%;
-    padding-bottom: 40%;
-    visibility: block;
-}
-
-.aboutus-content{
-    position:relative;
-    padding-bottom: 56.25%;
-    z-index: 1; /* 16:9 aspect ratio (height/width = 9/16 = 0.5625 or 56.25%) */
-}
-
-.aboutus{
+    padding: 4rem 1rem;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .intro h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .intro h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+  }
+  
+  .aboutus {
+    background-color: var(--light-text-color);
+    padding: 4rem 1rem;
     text-align: center;
-    background-color: rgb(159, 124, 77);
-    padding-top: 40%;
-    padding-bottom: 40%;
-}
-
-iframe{
+  }
+  
+  .aboutus h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .aboutus-content {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+  
+  .aboutus-content iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80%;
-    height: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    z-index: 1;
-}
-
-image {
-    width: 70%;
-    height: auto;
-    /* Additional styling if needed */
-}
-
-button {
-    background-color: rgb(94, 73, 45);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    width: 100%;
+    height: 100%;
     border: none;
-    cursor: pointer;
-    width: 35%;
-    font-size: 20px;
-    border-radius: 0.5rem;
-}
-
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .aboutus p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+  }
+  
+  @media (min-width: 768px) {
+    .intro h1 {
+      font-size: 3.5rem;
+    }
+  
+    .intro h2 {
+      font-size: 2rem;
+    }
+  
+    button {
+      font-size: 1.25rem;
+      padding: 1rem 2rem;
+    }
+  
+    .aboutus h2 {
+      font-size: 2.5rem;
+    }
+  
+    .aboutus p {
+      font-size: 1.125rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .intro h1 {
+      font-size: 4rem;
+    }
+  
+    .intro h2 {
+      font-size: 2.25rem;
+    }
+  
+    .aboutus-content {
+      margin-bottom: 3rem;
+    }
+  }

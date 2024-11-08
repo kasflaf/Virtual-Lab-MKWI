@@ -1,109 +1,137 @@
 .TopNav {
-    overflow: hidden;
-    background-color: #333;
-    width: 100%;
-    user-select: none;
-    align-items: center;
-    text-align: center;
+    background-color: var(--secondary-color);
     position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
-    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
 }
 
 .TopNav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    padding: 17px 16px;
+    color: white;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 .TopNav a:hover {
-    background-color: burlywood;
-    color: black;
+    color: var(--accent-color);
 }
 
-.TopNav span {
-    float: right;
-    color: white;
-    background-color: burlywood;
-    justify-content: center;
-    padding-bottom: 10px;
-    padding-left: 9px;
-    padding-right: 9px;
-    padding-top: 4px;
+.TopNav .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
 .TopNavRight {
-    float: right;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-icon {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .SideNav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
     right: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
+    background-color: var(--secondary-color);
+    overflow-x: hidden;
     transition: 0.5s;
-    user-select: none; 
+    padding-top: 60px;
 }
 
 .SideNav a {
-    padding: 8px 8px 8px 32px;
+    padding: 15px 25px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 1.2rem;
+    color: white;
     display: block;
     transition: 0.3s;
 }
 
-.sidenav .closebtn {
+.SideNav a:hover {
+    color: var(--accent-color);
+}
+
+.SideNav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
 }
 
-/* Overlay style */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    opacity: 0; /* Start as invisible */
-    visibility: hidden; /* Prevent interaction */
-    transition: opacity 0.5s; /* Smooth transition with a delay for visibility */
-    z-index: 1; /* Below the top nav, above the main content */
-    transition: opacity 1 ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 999;
 }
 
-.desktop-header{
+.desktop-header {
     display: none;
 }
 
-.phone-header{
+.phone-header {
     display: block;
 }
 
-@media (min-width: 1024px){
-    .desktop-header{
+@media (min-width: 1024px) {
+    .desktop-header {
         display: block;
     }
-    .phone-header{
+    .phone-header {
         display: none;
     }
 }
 
+/* Existing styles remain the same */
 
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.username {
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+}
+
+.profile-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--light-text-color);
+}
+
+@media (max-width: 1023px) {
+    .phone-header .user-info {
+        margin-right: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .TopNavRight {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}

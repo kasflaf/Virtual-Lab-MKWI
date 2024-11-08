@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Lab</title>
+    <title>EngLab - Quiz</title>
     <link rel="stylesheet" href="../css/lab.css">
     <link rel="stylesheet" href="../css/nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="phone-header">
             <nav class="TopNav">
-                <a href="../index.html">Home</a>
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                <a href="../index.html" class="logo">EngLab</a>
+                <span class="menu-icon" onclick="openNav()">&#9776;</span>
             </nav>
             <nav id="Sidenav" class="SideNav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -25,7 +26,7 @@
 
         <div class="desktop-header">
             <nav class="TopNav">
-                <a href="../index.html">Home</a>
+                <a href="../index.html" class="logo">EngLab</a>
                 <div class="TopNavRight">
                     <a href="#">About</a>
                     <a href="#">Sign Up</a>
@@ -33,12 +34,11 @@
                 </div> 
             </nav>
         </div>
-        <script src="../js/sideNav.js"></script>
     </header>
         
     <main>
         <div class="content-box">
-            <h1 id="soal">Soal</h1>
+            <h1 id="soal">Question</h1>
             <div class="form">
                 <form id="form-quiz">
                     <button type="button" id="option1" class="quiz-option">Option 1</button>
@@ -47,18 +47,20 @@
                     <button type="button" id="option4" class="quiz-option">Option 4</button>
                 </form>
             </div>
+            <div id="score-display"></div>
         </div> 
         <div class="button-container">
             <button class="go-next-button" id="restartbtn">Restart</button>
-            <button class="go-next-button" id="nextbtn">Go Next</button>
+            <button class="go-next-button" id="nextbtn">Next</button>
         </div>
     </main>
 
-
     <footer>
-        <a href="https://github.com/kasflaf/Virtual-Lab-MKWI" target="_blank">Link to GitHub</a>
+        <a href="https://github.com/kasflaf/Virtual-Lab-MKWI" target="_blank">View on GitHub</a>
+        <p>&copy; 2024 EngLab. All rights reserved.</p>
     </footer>
 
     <script src="../js/lab.js"></script>
+    <script src="../js/sideNav.js"></script>
 </body>
 </html>
