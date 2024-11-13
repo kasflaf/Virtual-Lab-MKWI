@@ -1,0 +1,41 @@
+.content-box {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+h1 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--light-text-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#leaderboard th,
+#leaderboard td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--background-color);
+}
+
+#leaderboard th {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    font-weight: 600;
+}
+
+#leaderboard tr:nth-child(even) {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+#leaderboard tr:hover {
+    background-color: rgba(52, 152, 219, 0.2);
+}

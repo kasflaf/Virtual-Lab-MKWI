@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EngLab - Leaderboard</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/leaderboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header>
+        <div class="phone-header">
+            <nav class="TopNav">
+                <a href="../index.html" class="logo">EngLab</a>
+                <div class="user-info">
+                    <span id="username-mobile" class="username"></span>
+                    <i data-lucide="user-circle" class="profile-icon"></i>
+                </div>
+                <span class="menu-icon" onclick="openNav()">&#9776;</span>
+            </nav>
+            <nav id="Sidenav" class="SideNav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#" id="login-link-mobile">Login</a>
+                <a href="#" id="signup-link-mobile">Sign Up</a>
+                <a href="./leaderboard.html">Leaderboard</a>
+                <a href="#" id="logout-link-mobile" style="display: none;">Logout</a>
+            </nav>
+            <div id="overlay" class="overlay"></div>
+        </div>
+        <div class="desktop-header">
+            <nav class="TopNav">
+                <a href="../index.html" class="logo">EngLab</a>
+                <div class="TopNavRight">
+                    <a href="./leaderboard.html">Leaderboard</a>
+                    <a href="#" id="signup-link">Sign Up</a>
+                    <a href="#" id="login-link">Login</a>
+                    <div class="user-info" style="display: none;">
+                        <span id="username-desktop" class="username"></span>
+                        <i data-lucide="user-circle" class="profile-icon"></i>
+                    </div>
+                    <a href="#" id="logout-link" style="display: none;">Logout</a>
+                </div> 
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="content-box">
+            <h1>Leaderboard</h1>
+            <table id="leaderboard">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Leaderboard data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <a href="https://github.com/kasflaf/Virtual-Lab-MKWI" target="_blank">View on GitHub</a>
+        <p>&copy; 2024 EngLab. All rights reserved.</p>
+    </footer>
+    <script src="./js/sideNav.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/leaderboard.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
