@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EngLab - Quiz</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header>
+        <div class="phone-header">
+          <nav class="TopNav">
+            <a href="../index.html" class="logo">EngLab</a>
+            <span class="menu-icon" onclick="openNav()">&#9776;</span>
+          </nav>
+          <nav id="Sidenav" class="SideNav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >&times;</a>
+            <a href="./login.html" id="login-link-mobile">Login</a>
+            <a href="./signup.html" id="signup-link-mobile">Sign Up</a>
+            <a href="./leaderboard.html">Leaderboard</a>
+            <a href="#" id="logout-link" style="display: none">Logout</a>
+            <a href="#" id="delete-account" style="display: none">Delete Account</a>
+          </nav>
+          <div id="overlay" class="overlay"></div>
+        </div>
+        <div class="desktop-header">
+          <nav class="TopNav">
+            <a href="../index.html" class="logo">EngLab</a>
+            <div class="TopNavRight">
+              <a href="./leaderboard.html">Leaderboard</a>
+              <a href="./signup.html" id="signup-link">Sign Up</a>
+              <a href="./login.html" id="login-link">Login</a>
+              <a href="#" id="logout-link" style="display: none">Logout</a>
+              <a href="#" id="delete-account" style="display: none">Delete Account</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="quiz-container">
+            <h1>EngLab Quiz</h1>
+            <div id="score-display">Total Score: 0</div>
+            <div id="question-container">
+                <h2 id="question-text"></h2>
+                <form id="quiz-form">
+                    <div id="answer-options"></div>
+                    <button type="submit" id="submit-btn">Submit Answer</button>
+                </form>
+            </div>
+            <div id="result-container" style="display: none;">
+                <p id="result-text"></p>
+                <button type="button" id="next-btn">Next Question</button>
+                <button type="button" id="finish-btn" style="display: none;">Finish Quiz</button>
+            </div>
+        </div>
+    </main>
+      <!-- Confirmation Modal -->
+      <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="close-modal">&times;</span>
+          <p id="confirmation-message"></p>
+          <button id="confirm-action" class="confirm-btn">Yes</button>
+          <button id="cancel-action" class="cancel-btn">No</button>
+        </div>
+      </div>
+  
+
+    <footer>
+        <a href="https://github.com/kasflaf/Virtual-Lab-MKWI" target="_blank">View on GitHub</a>
+        <p>&copy; 2024 EngLab. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/sideNav.js"></script>
+    <script src="../js/quiz.js"></script>
+</body>
+</html>
