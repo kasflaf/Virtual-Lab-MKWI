@@ -1,41 +1,69 @@
 .content-box {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
 }
 
 h1 {
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-    text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 #leaderboard {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--light-text-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--light-text-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 #leaderboard th,
 #leaderboard td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--background-color);
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--background-color);
 }
 
 #leaderboard th {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    font-weight: 600;
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  font-weight: 600;
 }
 
 #leaderboard tr:nth-child(even) {
-    background-color: rgba(52, 152, 219, 0.1);
+  background-color: rgba(52, 152, 219, 0.1);
 }
 
 #leaderboard tr:hover {
-    background-color: rgba(52, 152, 219, 0.2);
+  background-color: rgba(52, 152, 219, 0.2);
+}
+
+#user-score-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto; /* Changed to auto margins on left/right for centering */
+  text-align: center; /* Added for better text alignment */
+  width: 100%; /* Ensure full width */
+  font-size: 20px;
+}
+
+#user-score-section h2 {
+  display: inline-flex; /* Changed to inline-flex for better alignment */
+  align-items: center;
+  margin: 0; /* Remove default margins */
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+#user-score {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 24px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgba(40, 167, 69, 0.1);
+  margin-left: 10px; /* Moved margin to score element */
 }

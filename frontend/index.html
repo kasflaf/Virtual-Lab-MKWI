@@ -1,80 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EngLab - Virtual Engineering Laboratory</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <div class="phone-header">
-            <nav class="TopNav">
-                <a href="./index.html" class="logo">EngLab</a>
-                <div class="user-info">
-                    <span id="username-mobile" class="username"></span>
-                    <i data-lucide="user-circle" class="profile-icon"></i>
-                </div>
-                <span class="menu-icon" onclick="openNav()">&#9776;</span>
-            </nav>
-            <nav id="Sidenav" class="SideNav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#" id="login-link-mobile">Login</a>
-                <a href="#" id="signup-link-mobile">Sign Up</a>
-                <a href="./page/leaderboard.html">Leaderboard</a>
-                <a href="#" id="logout-link-mobile" style="display: none;">Logout</a>
-            </nav>
-            <div id="overlay" class="overlay"></div>
-        </div>
-        <div class="desktop-header">
-            <nav class="TopNav">
-                <a href="./index.html" class="logo">EngLab</a>
-                <div class="TopNavRight">
-                    <a href="./page/leaderboard.html">Leaderboard</a>
-                    <a href="#" id="signup-link">Sign Up</a>
-                    <a href="#" id="login-link">Login</a>
-                    <div class="user-info" style="display: none;">
-                        <span id="username-desktop" class="username"></span>
-                        <i data-lucide="user-circle" class="profile-icon"></i>
-                    </div>
-                    <a href="#" id="logout-link" style="display: none;">Logout</a>
-                </div> 
-            </nav>
-        </div>
+      <div class="phone-header">
+        <nav class="TopNav">
+          <a href="./index.html" class="logo">EngLab</a>
+          <span class="menu-icon" onclick="openNav()">&#9776;</span>
+        </nav>
+        <nav id="Sidenav" class="SideNav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a>
+          <a href="./page/login.html" id="login-link-mobile">Login</a>
+          <a href="./page/signup.html" id="signup-link-mobile">Sign Up</a>
+          <a href="./page/leaderboard.html">Leaderboard</a>
+          <a href="#" id="logout-link" style="display: none">Logout</a>
+          <a href="#" id="delete-account" style="display: none">Delete Account</a>
+        </nav>
+        <div id="overlay" class="overlay"></div>
+      </div>
+      <div class="desktop-header">
+        <nav class="TopNav">
+          <a href="./index.html" class="logo">EngLab</a>
+          <div class="TopNavRight">
+            <a href="./page/leaderboard.html">Leaderboard</a>
+            <a href="./page/signup.html" id="signup-link">Sign Up</a>
+            <a href="./page/login.html" id="login-link">Login</a>
+            <a href="#" id="logout-link" style="display: none">Logout</a>
+            <a href="#" id="delete-account" style="display: none">Delete Account</a>
+        </nav>
+      </div>
     </header>
-    <!-- Rest of the body content remains the same -->
-    <script src="./js/sideNav.js"></script>
-    <script src="./js/auth.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
     <main>
-        <section class="intro">
-            <h1>Welcome to EngLab</h1>
-            <h2>Your Virtual Engineering Laboratory</h2>
-            <button id="startbtn" onclick="location.href='./page/lab.html'">Start Experimenting</button>
-        </section>
-        <section class="aboutus">
-            <h2>About Us</h2>
-            <div class="aboutus-content">
-                <iframe src="https://www.youtube.com/embed/xvFZjo5PgG0?si=L6tzJsnVbY8zs0J5&autohide=1&modestbranding=1&rel=0" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-                </iframe>
-            </div>    
-            <p>EngLab is a cutting-edge virtual laboratory designed to revolutionize engineering education. Our platform provides students and professionals with hands-on experience in a safe, accessible, and innovative digital environment.</p>
-        </section>
+      <section class="intro">
+        <h1>Welcome to EngLab</h1>
+        <h2>Your Virtual Engineering Laboratory</h2>
+        <button id="startbtn">Start Experimenting</button>
+      </section>
+      <section class="aboutus">
+        <h2>About Us</h2>
+        <div class="aboutus-content">
+          <iframe
+            src="https://www.youtube.com/embed/xvFZjo5PgG0?si=L6tzJsnVbY8zs0J5&autohide=1&modestbranding=1&rel=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+        <p>
+          EngLab is a cutting-edge virtual laboratory designed to revolutionize
+          engineering education. Our platform provides students and
+          professionals with hands-on experience in a safe, accessible, and
+          innovative digital environment.
+        </p>
+      </section>
     </main>
+    <!-- Confirmation Modal -->
+<div id="confirmation-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="close-modal">&times;</span>
+    <p id="confirmation-message"></p>
+    <button id="confirm-action" class="confirm-btn">Yes</button>
+    <button id="cancel-action" class="cancel-btn">No</button>
+  </div>
+</div>
+
     <footer>
-        <a href="https://github.com/kasflaf/Virtual-Lab-MKWI" target="_blank">View on GitHub</a>
-        <p>&copy; 2024 EngLab. All rights reserved.</p>
+      <a href="https://github.com/kasflaf/Virtual-Lab-MKWI" target="_blank"
+      >View on GitHub</a>
+      <p>&copy; 2024 EngLab. All rights reserved.</p>
     </footer>
     <script src="./js/sideNav.js"></script>
-</body>
+    <script src="./js/index.js"></script>
+  </body>
 </html>

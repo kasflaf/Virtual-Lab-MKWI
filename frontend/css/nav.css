@@ -1,137 +1,191 @@
 .TopNav {
-    background-color: var(--secondary-color);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 1000;
+  background-color: var(--secondary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
 }
 
 .TopNav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .TopNav a:hover {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .TopNav .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
 .TopNavRight {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .menu-icon {
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .SideNav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1001;
-    top: 0;
-    right: 0;
-    background-color: var(--secondary-color);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  background-color: var(--secondary-color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
 .SideNav a {
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: white;
-    display: block;
-    transition: 0.3s;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  display: block;
+  transition: 0.3s;
 }
 
 .SideNav a:hover {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .SideNav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 999;
 }
 
 .desktop-header {
-    display: none;
+  display: none;
 }
 
 .phone-header {
-    display: block;
+  display: block;
 }
 
 @media (min-width: 1024px) {
-    .desktop-header {
-        display: block;
-    }
-    .phone-header {
-        display: none;
-    }
+  .desktop-header {
+    display: block;
+  }
+  .phone-header {
+    display: none;
+  }
 }
 
 /* Existing styles remain the same */
 
 .user-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .username {
-    color: var(--light-text-color);
-    font-size: 0.9rem;
+  color: var(--light-text-color);
+  font-size: 0.9rem;
 }
 
 .profile-icon {
-    width: 24px;
-    height: 24px;
-    color: var(--light-text-color);
+  width: 24px;
+  height: 24px;
+  color: var(--light-text-color);
 }
 
 @media (max-width: 1023px) {
-    .phone-header .user-info {
-        margin-right: 1rem;
-    }
+  .phone-header .user-info {
+    margin-right: 1rem;
+  }
 }
 
 @media (min-width: 1024px) {
-    .TopNavRight {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
+  .TopNavRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+/* Modal Background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Buttons */
+.confirm-btn, .cancel-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background-color: green;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: red;
+  color: white;
 }

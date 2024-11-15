@@ -1,84 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EngLab - Sign Up</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/auth.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/auth.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <div class="phone-header">
-            <nav class="TopNav">
-                <a href="../index.html" class="logo">EngLab</a>
-                <div class="user-info">
-                    <span id="username-mobile" class="username"></span>
-                    <i data-lucide="user-circle" class="profile-icon"></i>
-                </div>
-                <span class="menu-icon" onclick="openNav()">&#9776;</span>
-            </nav>
-            <nav id="Sidenav" class="SideNav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#" id="login-link-mobile">Login</a>
-                <a href="#" id="signup-link-mobile">Sign Up</a>
-                <a href="./leaderboard.html">Leaderboard</a>
-                <a href="#" id="logout-link-mobile" style="display: none;">Logout</a>
-            </nav>
-            <div id="overlay" class="overlay"></div>
-        </div>
-        <div class="desktop-header">
-            <nav class="TopNav">
-                <a href="../index.html" class="logo">EngLab</a>
-                <div class="TopNavRight">
-                    <a href="./leaderboard.html">Leaderboard</a>
-                    <a href="#" id="signup-link">Sign Up</a>
-                    <a href="#" id="login-link">Login</a>
-                    <div class="user-info" style="display: none;">
-                        <span id="username-desktop" class="username"></span>
-                        <i data-lucide="user-circle" class="profile-icon"></i>
-                    </div>
-                    <a href="#" id="logout-link" style="display: none;">Logout</a>
-                </div> 
-            </nav>
-        </div>
+      <div class="phone-header">
+        <nav class="TopNav">
+          <a href="../index.html" class="logo">EngLab</a>
+          <span class="menu-icon" onclick="openNav()">&#9776;</span>
+        </nav>
+        <nav id="Sidenav" class="SideNav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a>
+          <a href="./login.html" id="login-link-mobile">Login</a>
+          <a href="./signup.html" id="signup-link-mobile">Sign Up</a>
+          <a href="./leaderboard.html">Leaderboard</a>
+          <a href="#" id="logout-link" style="display: none">Logout</a>
+          <a href="#" id="delete-account" style="display: none">Delete Account</a>
+        </nav>
+        <div id="overlay" class="overlay"></div>
+      </div>
+      <div class="desktop-header">
+        <nav class="TopNav">
+          <a href="../index.html" class="logo">EngLab</a>
+          <div class="TopNavRight">
+            <a href="./leaderboard.html">Leaderboard</a>
+            <a href="./signup.html" id="signup-link">Sign Up</a>
+            <a href="./login.html" id="login-link">Login</a>
+            <a href="#" id="logout-link" style="display: none">Logout</a>
+            <a href="#" id="delete-account" style="display: none">Delete Account</a>
+        </nav>
+      </div>
     </header>
     <main>
-        <div class="content-box">
-            <h1>Sign Up</h1>
-            <form id="signup-form">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
-                </div>
-                <button type="submit">Sign Up</button>
-            </form>
-            <p class="auth-link">Already have an account? <a href="login.html">Login</a></p>
-        </div>
+      <div class="content-box">
+        <h1>Sign Up</h1>
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+            />
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <div id="error-message" style="color: red; display: none"></div>
+
+        <p class="auth-link">
+          Already have an account? <a href="login.html">Login</a>
+        </p>
+      </div>
     </main>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <p id="confirmation-message"></p>
+        <button id="confirm-action" class="confirm-btn">Yes</button>
+        <button id="cancel-action" class="cancel-btn">No</button>
+      </div>
+    </div>
+
     <footer>
-        <a href="https://github.com/kasflaf/Virtual-Lab-MKWI" target="_blank">View on GitHub</a>
-        <p>&copy; 2024 EngLab. All rights reserved.</p>
+      <a href="https://github.com/kasflaf/Virtual-Lab-MKWI" target="_blank"
+      >View on GitHub</a>
+      <p>&copy; 2024 EngLab. All rights reserved.</p>
     </footer>
-    <script src="./js/sideNav.js"></script>
-    <script src="./js/auth.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
+    <script src="../js/sideNav.js"></script>
+    <script src="../js/signup.js"></script>
+  </body>
 </html>

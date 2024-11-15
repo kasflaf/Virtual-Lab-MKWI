@@ -11,8 +11,13 @@ const initDb = async () => {
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       username TEXT UNIQUE,
-      password TEXT
+      password TEXT,
+      score NUMBER DEFAULT 0
     );
+  `);
+
+  await db.exec(`
+    
   `);
 
   return db;
