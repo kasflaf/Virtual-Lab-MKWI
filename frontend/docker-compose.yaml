@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile # Optional, if the Dockerfile is named "Dockerfile"
+
+    # Set a custom container name
+    container_name: virlab-fe # This is the container name
+
+    # Expose port 80 in the container to port 8080 on the host machine
+    ports:
+      - "80:80"
+
+#     networks:
+#       - virlab-network
+
+# networks:
+#   virlab-network:
+#     driver: bridge

@@ -27,32 +27,33 @@ function populateLeaderboard(leaderboardData) {
   });
 }
 
-  // Fetch the logged-in user's score and display it if logged in
-  async function fetchUserScore() {
-    try {
-      const response = await fetch("http://localhost:5000/get-score", {
-        method: "GET",
-        credentials: "include" // Include cookies (if using session-based auth)
-      });
+// Fetch the logged-in user's score and display it if logged in
+async function fetchUserScore() {
+  try {
+    const response = await fetch("http://localhost:5000/get-score", {
+      method: "GET",
+      credentials: "include", // Include cookies (if using session-based auth)
+    });
 
-      if (response.ok) {
-        const data = await response.json();
-        const score = data.score;
+    if (response.ok) {
+      const data = await response.json();
+      const score = data.score;
 
-        // Show the score section and set the score
-        document.getElementById("user-score-section").style.display = "block";
-        document.getElementById("user-score").textContent = score;
-      } else {
-        // If the user is not logged in or there's an error fetching the score, hide the section
-        document.getElementById("user-score-section").style.display = "none";
-      }
-    } catch (error) {
-      console.error("Error fetching user score:", error);
+      // Show the score section and set the score
+      document.getElementById("user-score-section").style.display = "block";
+      document.getElementById("user-score").textContent = score;
+    } else {
+      // If the user is not logged in or there's an error fetching the score, hide the section
+      document.getElementById("user-score-section").style.display = "none";
     }
+  } catch (error) {
+    console.error("Error fetching user score:", error);
   }
+}
 
 // Fetch leaderboard when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   fetchLeaderboard();
-  fetchUserScore();
+  const token = localStorage.getItem("user");
+  if (token) fetchUserScore();
 });
