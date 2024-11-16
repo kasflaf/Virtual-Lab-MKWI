@@ -63,6 +63,28 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   );
 
+ // Add event listeners for Logout and Delete Account
+ document.getElementById("logout-link-d").addEventListener(
+  "click",
+  function (e) {
+    e.preventDefault();
+    closeNav();
+    showConfirmationModal("Are you sure you want to log out?", "logout");
+  },
+);
+
+document.getElementById("delete-account-d").addEventListener(
+  "click",
+  function (e) {
+    e.preventDefault();
+    closeNav();
+    showConfirmationModal(
+      "Are you sure you want to delete your account? This action is irreversible.",
+      "delete",
+    );
+  },
+);
+
   // Close modal
   document.getElementById("close-modal").addEventListener(
     "click",
