@@ -1,6 +1,6 @@
 async function fetchLeaderboard() {
   try {
-    const response = await fetch("http://localhost:5000/leaderboard");
+    const response = await fetch("http://128.199.65.6/leaderboard");
     if (!response.ok) {
       throw new Error("Failed to fetch leaderboard data");
     }
@@ -30,7 +30,7 @@ function populateLeaderboard(leaderboardData) {
 // Fetch the logged-in user's score and display it if logged in
 async function fetchUserScore() {
   try {
-    const response = await fetch("http://localhost:5000/get-score", {
+    const response = await fetch("http://128.199.65.6/get-score", {
       method: "GET",
       credentials: "include", // Include cookies (if using session-based auth)
     });

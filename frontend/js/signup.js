@@ -18,7 +18,7 @@ document.getElementById("signup-form").addEventListener(
     }
 
     try {
-      const response = await fetch("http://localhost:5000/register", {
+      const response = await fetch("http://128.199.65.6/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
