@@ -24,17 +24,23 @@ function updateNavigation() {
   );
   const logoutLinks = document.querySelectorAll("#logout-link");
   const deleteAccountLinks = document.querySelectorAll("#delete-account");
+  const logoutLinksDesktop = document.querySelectorAll("#logout-link-d");
+  const deleteAccountLinksDesktop = document.querySelectorAll("#delete-account-d");
 
   if (user) {
     loginLinksMobile.forEach((link) => link.style.display = "none");
     loginLinksDesktop.forEach((link) => link.style.display = "none");
     logoutLinks.forEach((link) => link.style.display = "block");
+    logoutLinksDesktop.forEach((link) => link.style.display = "block");
     deleteAccountLinks.forEach((link) => link.style.display = "block");
+    deleteAccountLinksDesktop.forEach((link) => link.style.display = "block");
   } else {
     loginLinksMobile.forEach((link) => link.style.display = "block");
     loginLinksDesktop.forEach((link) => link.style.display = "block");
     logoutLinks.forEach((link) => link.style.display = "none");
     deleteAccountLinks.forEach((link) => link.style.display = "none");
+    logoutLinksDesktop.forEach((link) => link.style.display = "none");
+    deleteAccountLinksDesktop.forEach((link) => link.style.display = "none");
   }
 }
 
