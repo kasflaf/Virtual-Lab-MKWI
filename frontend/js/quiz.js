@@ -148,7 +148,7 @@ finishBtn.addEventListener("click", finishQuiz);
 
 async function getScore() {
   try {
-    const response = await fetch("http://128.199.65.6/get-score", {
+    const response = await fetch("http://128.199.65.6:5000/get-score", {
       method: "GET",
       credentials: "include", // Include cookies for authentication
       headers: {
@@ -170,7 +170,7 @@ async function getScore() {
 
 async function updateScore() {
   try {
-    const response = await fetch("http://128.199.65.6/update-score", {
+    const response = await fetch("http://128.199.65.6:5000/update-score", {
       method: "PUT",
       credentials: "include", // Include cookies for authentication
       headers: {

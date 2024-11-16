@@ -108,7 +108,7 @@ function closeConfirmationModal() {
 // Handle logout
 async function handleLogout() {
   try {
-    const response = await fetch("http://128.199.65.6/logout", {
+    const response = await fetch("http://128.199.65.6:5000/logout", {
       method: "POST",
       credentials: "include", // Ensure cookies are sent along with the request
     });
@@ -134,7 +134,7 @@ async function handleLogout() {
 // Handle account deletion
 async function handleDeleteAccount() {
   try {
-    const response = await fetch("http://128.199.65.6/delete-account", {
+    const response = await fetch("http://128.199.65.6:5000/delete-account", {
       method: "DELETE",
       credentials: "include", // Include cookies with the request
     });
