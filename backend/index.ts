@@ -19,7 +19,7 @@ interface JwtPayload {
 
 //enviroment variables
 const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key";
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:80";
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost";
 const PORT = process.env.PORT || 5000;
 const NODE_ENV = process.env.NODE_ENV || false;
 
