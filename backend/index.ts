@@ -156,8 +156,8 @@ app.post("/login", async (req: Request, res: Response) => {
 
     // Set the token as an HTTP-only cookie
     res.cookie("jwt", token, {
-      httpOnly: true, // Prevents JavaScript access to cookie
-      secure: true, // Only use secure in production
+      httpOnly: false, // Prevents JavaScript access to cookie
+      secure: false, // Only use secure in production
       sameSite: "strict", // Prevents CSRF attacks
       maxAge: 86400000, // 1 hour expiration in milliseconds
     });
@@ -173,8 +173,8 @@ app.post("/login", async (req: Request, res: Response) => {
 app.post("/logout", authenticateJWT, (req: Request, res: Response) => {
   // Clear the JWT cookie by setting its expiration date in the past
   res.cookie("jwt", "", {
-    httpOnly: true, // Prevent JavaScript access to cookie
-    secure: true, // Only use secure in production
+    httpOnly: false, // Prevent JavaScript access to cookie
+    secure: false, // Only use secure in production
     sameSite: "strict", // Prevents CSRF attacks
     expires: new Date(0), // Set expiry to the past to invalidate the cookie
   });
@@ -198,8 +198,8 @@ app.delete(
 
       // Optionally, clear the JWT cookie (log out the user)
       res.cookie("jwt", "", {
-        httpOnly: true,
-        secure: true,
+        httpOnly: false,
+        secure: false,
         sameSite: "strict",
         expires: new Date(0), // Expiry set to past to invalidate the cookie
       });
